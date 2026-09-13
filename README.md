@@ -42,14 +42,14 @@ The wheel lands in `src/sageattention/dist/`. Install it with
 ## Usage
 
 ```bash
-git submodule update --init --depth 1 --checkout src/sageattention
+git clone https://gitlab.com/lyoneel/sageattention-nvidia-rtx-30xx-series-gpus.git
+cd sageattention-nvidia-rtx-30xx-series-gpus
 ./build.sh
 ```
 
-Clone this repository with `--recurse-submodules`, or run the
-`git submodule update` line above after a normal clone. The source
-submodule is pinned at the tested commit
-`7688d781fa6022649daacf6b9c4ad267c83df6b4`.
+`build.sh` fetches the pinned source submodule on first run, so no
+manual submodule step exists. The source is pinned at the tested
+commit `7688d781fa6022649daacf6b9c4ad267c83df6b4`.
 
 Optional: seed the build venv from an existing venv to skip the torch
 download.

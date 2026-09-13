@@ -22,7 +22,8 @@ script. It contains no kernel code; all kernel work lives upstream.
 ## Build flow
 
 1. The source checkout lives at `src/sageattention`, a submodule of
-   this repository, pinned at the tested commit; initialize it with
+   this repository, pinned at the tested commit. `build.sh`
+   initializes it on demand; the manual command is
    `git submodule update --init --depth 1 --checkout
    src/sageattention`.
 2. `build.sh` resolves its own location (`app_dir`), so it runs from

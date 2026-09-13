@@ -7,7 +7,8 @@ testable.
 ## Dev setup
 
 ```bash
-git submodule update --init --depth 1 --checkout src/sageattention
+git clone https://gitlab.com/lyoneel/sageattention-nvidia-rtx-30xx-series-gpus.git
+cd sageattention-nvidia-rtx-30xx-series-gpus
 ./build.sh
 ```
 

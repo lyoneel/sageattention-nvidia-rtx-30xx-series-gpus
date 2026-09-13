@@ -11,8 +11,12 @@ seed_venv="${SAGEATTENTION_SEED_VENV:-}"
 torch_version="2.12.1+cu130"
 
 if [ ! -f "$src/setup.py" ]; then
-    echo "error: $src is not initialized; run:" >&2
-    echo "  git submodule update --init --depth 1 --checkout sageattention/src/sageattention" >&2
+    echo "Source checkout missing; fetching the pinned submodule..."
+    git -C "$app_dir" submodule update --init --depth 1 --checkout src/sageattention
+fi
+if [ ! -f "$src/setup.py" ]; then
+    echo "error: $src is unavailable; clone this repository with git and" >&2
+    echo "  retry, or run: git submodule update --init --depth 1 --checkout src/sageattention" >&2
     exit 1
 fi
 
