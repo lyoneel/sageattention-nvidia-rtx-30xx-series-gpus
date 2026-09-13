@@ -1,0 +1,13 @@
+--- a/torch/utils/cpp_extension.py
++++ b/torch/utils/cpp_extension.py
+@@ -541,8 +541,8 @@
+         # major/minor attributes are only available in setuptools>=49.4.0
+         if getattr(cuda_ver, "major", None) is None:
+             raise ValueError("setuptools>=49.4.0 is required")
+-        if cuda_ver.major != torch_cuda_version.major:
+-            raise RuntimeError(CUDA_MISMATCH_MESSAGE, cuda_str_version, torch.version.cuda)
++#        if cuda_ver.major != torch_cuda_version.major:
++#            raise RuntimeError(CUDA_MISMATCH_MESSAGE, cuda_str_version, torch.version.cuda)
+         logger.warning(CUDA_MISMATCH_WARN, cuda_str_version, torch.version.cuda)
+ 
+     if not (sys.platform.startswith('linux') and

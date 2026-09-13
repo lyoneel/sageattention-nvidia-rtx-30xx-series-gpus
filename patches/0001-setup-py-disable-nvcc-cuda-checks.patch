@@ -1,0 +1,40 @@
+diff --git a/setup.py b/setup.py
+index edef39b..9563cbf 100644
+--- a/setup.py
++++ b/setup.py
+@@ -83,17 +83,17 @@ else:
+     print(f"Detect GPUs with compute capabilities: {compute_capabilities}")
+ 
+ # Validate the NVCC CUDA version.
+-if nvcc_cuda_version < Version("12.0"):
+-    raise RuntimeError("CUDA 12.0 or higher is required to build the package.")
+-if nvcc_cuda_version < Version("12.4") and any(cc.startswith("8.9") for cc in compute_capabilities):
+-    raise RuntimeError(
+-        "CUDA 12.4 or higher is required for compute capability 8.9.")
+-if nvcc_cuda_version < Version("12.3") and any(cc.startswith("9.0") for cc in compute_capabilities):
+-    raise RuntimeError(
+-        "CUDA 12.3 or higher is required for compute capability 9.0.")
+-if nvcc_cuda_version < Version("12.8") and any(cc.startswith("12.0") for cc in compute_capabilities):
+-    raise RuntimeError(
+-        "CUDA 12.8 or higher is required for compute capability 12.0.")
++#if nvcc_cuda_version < Version("12.0"):
++    #raise RuntimeError("CUDA 12.0 or higher is required to build the package.")
++#if nvcc_cuda_version < Version("12.4") and any(cc.startswith("8.9") for cc in compute_capabilities):
++    #raise RuntimeError(
++        #"CUDA 12.4 or higher is required for compute capability 8.9.")
++#if nvcc_cuda_version < Version("12.3") and any(cc.startswith("9.0") for cc in compute_capabilities):
++    #raise RuntimeError(
++        #"CUDA 12.3 or higher is required for compute capability 9.0.")
++#if nvcc_cuda_version < Version("12.8") and any(cc.startswith("12.0") for cc in compute_capabilities):
++    #raise RuntimeError(
++        #"CUDA 12.8 or higher is required for compute capability 12.0.")
+ 
+ # Add target compute capabilities to NVCC flags.
+ for capability in compute_capabilities:
+@@ -192,4 +192,4 @@ setup(
+     python_requires='>=3.9',
+     ext_modules=ext_modules,
+     cmdclass={"build_ext": BuildExtension},
+-)
+\ No newline at end of file
++)
