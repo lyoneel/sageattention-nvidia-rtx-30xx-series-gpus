@@ -21,8 +21,10 @@ script. It contains no kernel code; all kernel work lives upstream.
 
 ## Build flow
 
-1. The caller provides the source checkout at `src/sageattention`
-   (clone of the upstream repo at the recorded pin).
+1. The source checkout lives at `src/sageattention`, a submodule of
+   this repository, pinned at the tested commit; initialize it with
+   `git submodule update --init --depth 1 --checkout
+   src/sageattention`.
 2. `build.sh` resolves its own location (`app_dir`), so it runs from
    any working directory.
 3. Venv seeding order: reuse `src/.venv`; else move the venv named in

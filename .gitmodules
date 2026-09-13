@@ -1,0 +1,5 @@
+[submodule "src/sageattention"]
+	path = src/sageattention
+	url = https://github.com/thu-ml/SageAttention.git
+	update = none
+	shallow = true

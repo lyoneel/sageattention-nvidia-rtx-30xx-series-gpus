@@ -42,10 +42,14 @@ The wheel lands in `src/sageattention/dist/`. Install it with
 ## Usage
 
 ```bash
-git clone https://github.com/thu-ml/SageAttention.git src/sageattention
-git -C src/sageattention checkout 7688d781fa6022649daacf6b9c4ad267c83df6b4
+git submodule update --init --depth 1 --checkout src/sageattention
 ./build.sh
 ```
+
+Clone this repository with `--recurse-submodules`, or run the
+`git submodule update` line above after a normal clone. The source
+submodule is pinned at the tested commit
+`7688d781fa6022649daacf6b9c4ad267c83df6b4`.
 
 Optional: seed the build venv from an existing venv to skip the torch
 download.
@@ -71,6 +75,7 @@ values up when more cards are present: 2 cards give 8, 8, and 16.
 | `recipe.md` | Build contract: pin, environment versions, steps, patch list, known issues |
 | `build.sh` | Single rebuild entry point |
 | `patches/` | Ordered patch series applied to the upstream source and to torch |
+| `src/sageattention` | Submodule: upstream source at the pinned commit |
 
 ## Status and known issues
 

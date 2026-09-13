@@ -7,8 +7,7 @@ testable.
 ## Dev setup
 
 ```bash
-git clone https://github.com/thu-ml/SageAttention.git src/sageattention
-git -C src/sageattention checkout 7688d781fa6022649daacf6b9c4ad267c83df6b4
+git submodule update --init --depth 1 --checkout src/sageattention
 ./build.sh
 ```
 
