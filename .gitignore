@@ -36,3 +36,6 @@ RELEASE_SUMMARY.md
 *.db-wal
 *.db-shm
 **/http-client.private.env.json
+
+# Agent tooling
+.playwright-mcp/
