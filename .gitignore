@@ -39,3 +39,6 @@ RELEASE_SUMMARY.md
 
 # Agent tooling
 .playwright-mcp/
+
+# Sync artifacts
+.stfolder/
